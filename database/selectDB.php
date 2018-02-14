@@ -67,8 +67,7 @@
         }
         catch(PDOExeption $e){
             echo "Request failed : " . $e->getMessage();
-        }
-        
+        }        
     }
 
 ?>

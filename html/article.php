@@ -1,11 +1,19 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>Page Title</title>
             <?php include '../includes/header.html' ?>
             <?php include '../database/connectDB.php'?>
             <?php include '../database/selectDB.php'?>
             <?php include 'affichage.php'?>
+            <title>
+                <?php
+                    $connect = connectBDD();
+                    $id = $_GET['id'];
+                    $stmt = article($connect, $id);
+
+                    afficherTitre($stmt);
+                 ?>
+            </title>
         </head>
         <body>
             <div class="container">
@@ -17,9 +25,11 @@
                     afficherCard($stmt);
 
                 ?>
-                <button type="button" name="button" href="../index.php">Retour</button>
+                
                 </div>
-
+                <div class="container">
+                    <a href="../index.php"><button type="button" name="button" class="btn btn-primary">Retour</button></a>
+                </div>
             <?php include '../includes/base_js.html' ?>
             <script type="text/javascript" src="../js/jqueryArticle.js"></script>
         </body>

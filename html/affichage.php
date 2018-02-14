@@ -33,4 +33,10 @@
             echo "<p class='card-text'>".$row['texte']."</p>";
         }
     }
+
+    function afficherTitre($stmt){
+        while($row = $stmt->fetch()) {
+            echo  $row['titre'];
+        }
+    }
 ?>
