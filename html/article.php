@@ -15,8 +15,11 @@
 
                     $stmt = article($connect, $id);
                     afficherCard($stmt);
+
                 ?>
+                <button type="button" name="button" href="../index.php">Retour</button>
                 </div>
+
             <?php include '../includes/base_js.html' ?>
             <script type="text/javascript" src="../js/jqueryArticle.js"></script>
         </body>
