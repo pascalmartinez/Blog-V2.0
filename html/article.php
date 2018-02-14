@@ -12,10 +12,8 @@
                 <?php
                     $connect = connectBDD();
                     $id = $_GET['id'];
-
                     $stmt = article($connect, $id);
-                    afficherCard($stmt);
-
+                    afficherimg($stmt);
                 ?>
                 </div>
             <?php include '../includes/base_js.html' ?>
