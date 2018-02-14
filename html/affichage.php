@@ -33,4 +33,5 @@
             echo "<p class='card-text'>".substr($row['texte'],0,150)."</p>";
         }
     }
+
 ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>Page Title</title>
+            <title>php</title>
             <?php include '../includes/header.html' ?>
             <?php include '../database/connectDB.php'?>
             <?php include '../database/selectDB.php'?>
