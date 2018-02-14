@@ -59,16 +59,15 @@
         }
     }
 
-    function textArcticle($connect, $id){
+    function textArticle($connect, $idArticle){
         try{
-            $stmt = $connect->prepare("SELECT texte FROM artcicle WHERE id_article='$id'");
+            $stmt = $connect->prepare("SELECT texte FROM article WHERE id_article='$idArticle'");
             $stmt->execute();
             return $stmt;
         }
         catch(PDOExeption $e){
             echo "Request failed : " . $e->getMessage();
-        }
-        
+        }        
     }
 
 ?>

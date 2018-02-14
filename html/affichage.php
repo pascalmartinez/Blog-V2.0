@@ -30,8 +30,13 @@
     function afficherTextArticle($stmt){
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         while($row = $stmt->fetch()) {
-            echo "<p class='card-text'>".substr($row['texte'],0,150)."</p>";
+            echo "<p class='card-text'>".$row['texte']."</p>";
         }
     }
 
+    function afficherTitre($stmt){
+        while($row = $stmt->fetch()) {
+            echo  $row['titre'];
+        }
+    }
 ?>

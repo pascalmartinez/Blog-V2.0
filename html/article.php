@@ -1,11 +1,19 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>php</title>
             <?php include '../includes/header.html' ?>
             <?php include '../database/connectDB.php'?>
             <?php include '../database/selectDB.php'?>
             <?php include 'affichage.php'?>
+            <title>
+                <?php
+                    $connect = connectBDD();
+                    $id = $_GET['id'];
+                    $stmt = article($connect, $id);
+
+                    afficherTitre($stmt);
+                 ?>
+            </title>
         </head>
         <body>
             <div class="container">

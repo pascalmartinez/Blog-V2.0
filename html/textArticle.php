@@ -5,6 +5,10 @@
 
         $connect = connectBDD();
 
-        $stmt = textArticle($connect, $idCategorie);
-        afficherTextArticle($stmt); 
+        if(isset($_GET['id'])){
+            $idArticle = $_GET['id'];
+
+            $stmt = textArticle($connect, $idArticle);
+            afficherTextArticle($stmt);
+        }         
 ?>
