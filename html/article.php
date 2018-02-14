@@ -16,6 +16,8 @@
                     $stmt = article($connect, $id);
                     afficherCard($stmt);
 
+                    
+
                 ?>
                 </div>
             <?php include '../includes/base_js.html' ?>

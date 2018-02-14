@@ -30,13 +30,12 @@
 
                                    </div>
                                    <div class="form-group form-title">
-                                       <label for="selectcategorie form-title">Selection de groupe</label>
-                                       <select id="selectcategorie" class="form-control form-field" id="exampleFormControlSelect1">
-                                           <option>1</option>
-                                           <option>2</option>
-                                           <option>3</option>
-                                           <option>4</option>
-                                           <option>5</option>
+                                       <label for="selectCategorie form-title">Selection de groupe</label>
+                                       <select class="form-control form-field" id="selectCategorie" name="categorie">
+                                       <?php
+                                            $stmt = selectCategorie($connect);
+                                            afficherSelectCategorie($stmt);
+                                        ?>
                                        </select>
                                    </div>
                                    <div class="form-group form-title">

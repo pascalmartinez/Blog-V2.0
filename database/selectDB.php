@@ -6,7 +6,7 @@
             FROM article
             INNER JOIN auteur ON article.id_auteur=auteur.id_auteur
             INNER JOIN categorie ON article.id_categorie=categorie.id_categorie
-            ORDER BY DATE LIMIT 10");//offset 10
+            ORDER BY DATE LIMIT 10 ");//offset 10
 
             $stmt->execute();
 
@@ -51,7 +51,7 @@
             INNER JOIN auteur ON article.id_auteur=auteur.id_auteur
             INNER JOIN categorie ON article.id_categorie=categorie.id_categorie WHERE id_article='$id'");//offset 10
             $stmt->execute();
-            
+
             return $stmt;
         }
         catch(PDOExeption $e){
