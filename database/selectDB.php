@@ -6,7 +6,7 @@
             FROM article
             INNER JOIN auteur ON article.id_auteur=auteur.id_auteur
             INNER JOIN categorie ON article.id_categorie=categorie.id_categorie
-            ORDER BY DATE LIMIT 10 ");//offset 10
+            ORDER BY date DESC LIMIT 10 ");//offset 10
 
             $stmt->execute();
 
@@ -24,7 +24,7 @@
             FROM article
             INNER JOIN auteur ON article.id_auteur=auteur.id_auteur
             INNER JOIN categorie ON article.id_categorie=categorie.id_categorie
-            WHERE categorie.id_categorie='$idCategorie'");
+            WHERE categorie.id_categorie='$idCategorie' ORDER BY date DESC");
             $stmt->execute();
             return $stmt;
         }
