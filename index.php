@@ -8,7 +8,7 @@
         <?php include 'database/selectDB.php'?>
         <?php include 'html/affichage.php'?>
     </head>
-    <body>
+    <body style="background-image: url(sources/images/back2.jpeg)">
         <?php $connect = connectBDD(); ?>
         <div class="bandeauInteraction container-fluid">
             <div class="row">
@@ -19,7 +19,7 @@
                     <div class="input-group d-md-flex mb-3 mt-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputCategorie">Catégorie</label>
-                            
+
                         </div>
                         <select class="custom-select col-7 col-md-6" id="inputCategorie">
                             <?php
@@ -32,12 +32,11 @@
             </div>
             <?php include 'html/formModal.php'; ?>
         </div>
-        <div class="container" method="post">
+        <div class="container section" method="post">
             <div class="row" id="main">
                 <?php
                     $stmt = articleCardList($connect);
                     afficherCard($stmt);
-
                 ?>
             </div>
         </div>

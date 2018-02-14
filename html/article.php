@@ -25,7 +25,6 @@
                     afficherCard($stmt);
                 ?>
                 </div>
-
                 <div class="container">
                     <a href="../index.php"><button type="button" name="button" class="btn btn-primary">Retour</button></a>
                 </div>
