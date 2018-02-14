@@ -1,0 +1,20 @@
+.bandeauInteraction {
+  background-color: grey;
+  top: 0;
+  min-height: 3rem; }
+
+.card-img-top {
+  border-radius: 0; }
+
+.card-subtitle {
+  color: cadetblue; }
+
+.card {
+  margin: 2rem; }
+  .card .card-header h6 {
+    color: crimson; }
+  .card .card-header a {
+    color: black;
+    font-size: 25px; }
+
+/*# sourceMappingURL=style.css.map */
