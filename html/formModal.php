@@ -12,7 +12,7 @@
                    <div class="modal-body">
                        <div class="modal-body">
                            <div class="form-group">
-                               <form class="container formulaire" action="database/traitform.php" method="post">
+                               <form class="container formulaire" action="database/traitform.php" enctype="multipart/form-data" method="post">
                                    <div class="form-group form-title">
                                        <label for="exampleFormControlInput1 form-title">Votre nom</label>
                                        <input name="nom" type="text" class="form-control form-field" placeholder="Indiquer votre nom ici">
@@ -21,13 +21,11 @@
                                    </div>
                                    <div class="custom-file form-title">
                                        <input name="fichier" type="file" class="custom-file-input form-title" id="customFile">
-
                                        <label class="custom-file-label form-field" for="customFile">Inclure une image</label>
                                    </div>
                                    <div class="title form-title">
                                        <label for="exampleFormControlInput1 form-title">Votre titre de message</label>
                                        <input name="titremessage" type="text" class="form-control form-field" placeholder="Indiquer votre titre ici">
-
                                    </div>
                                    <div class="form-group form-title">
                                        <label for="selectCategorie form-title">Selection de groupe</label>

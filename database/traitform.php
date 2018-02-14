@@ -5,7 +5,7 @@
 
     //récupération des valeurs des champs:
         $nom = $_POST["nom"];
-        $email = $_POST["email"];
+        $email = strtolower($_POST["email"]);
         $titremessage = $_POST["titremessage"];
         $message = $_POST["message"];
         $categorie = $_POST["categorie"];
