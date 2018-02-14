@@ -59,4 +59,16 @@
         }
     }
 
+    function textArcticle($connect, $id){
+        try{
+            $stmt = $connect->prepare("SELECT texte FROM artcicle WHERE id_article='$id'");
+            $stmt->execute();
+            return $stmt;
+        }
+        catch(PDOExeption $e){
+            echo "Request failed : " . $e->getMessage();
+        }
+        
+    }
+
 ?>
