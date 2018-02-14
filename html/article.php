@@ -12,10 +12,14 @@
                 <?php
                     $connect = connectBDD();
                     $id = $_GET['id'];
+
                     $stmt = article($connect, $id);
-                    afficherimg($stmt);
+                    afficherCard($stmt);
+
                 ?>
                 </div>
             <?php include '../includes/base_js.html' ?>
+            <script type="text/javascript" src="../js/articleImg.js"></script>
+
         </body>
     </html>

@@ -43,7 +43,7 @@
                             </div>
                                <div class="submit-container modal-footer">
                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                   <input class="submit-button" type="submit" value="Submit" />
+                                   <input class="submit-button" type="submit" value="Submit" action="post" />
                                </div>
                                </form>
                            </div>

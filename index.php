@@ -19,6 +19,7 @@
                     <div class="input-group d-md-flex mb-3 mt-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputCategorie">Catégorie</label>
+                            
                         </div>
                         <select class="custom-select col-7 col-md-6" id="inputCategorie">
                             <?php
@@ -36,6 +37,7 @@
                 <?php
                     $stmt = articleCardList($connect);
                     afficherCard($stmt);
+
                 ?>
             </div>
         </div>
