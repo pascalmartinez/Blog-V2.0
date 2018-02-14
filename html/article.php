@@ -25,6 +25,9 @@
                     afficherCard($stmt);
                 ?>
                 </div>
+                <div class="container">
+                    <a href="../index.php"><button type="button" name="button" class="btn btn-primary">Retour</button></a>
+                </div>
             <?php include '../includes/base_js.html' ?>
             <script type="text/javascript" src="../js/jqueryArticle.js"></script>
         </body>
