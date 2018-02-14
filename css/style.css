@@ -11,7 +11,8 @@
 
 .card {
   margin: 2rem;
-  max-width: 18rem; }
+  max-width: 18rem;
+  min-width: 18rem; }
   .card .card-header h6 {
     color: crimson; }
   .card .card-header a {

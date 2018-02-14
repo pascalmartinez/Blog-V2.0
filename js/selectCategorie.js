@@ -6,4 +6,4 @@ function changeSelect(event){
 
 $(document).ready(function(){
     $("#inputCategorie").change(changeSelect);
-})
+});

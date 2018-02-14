@@ -32,12 +32,13 @@
             <?php include 'html/formModal.php'; ?>
         </div>
         <div class="container" method="post">
-            <div class="row">
+            <div class="row" id="main">
                 <?php
                     $stmt = articleCardList($connect);
                     afficherCard($stmt);
                 ?>
             </div>
         </div>
+        <script src="js/selectCategorie.js"></script>
     </body>
 </html>
