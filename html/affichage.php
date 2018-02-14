@@ -27,4 +27,11 @@
         </div>";
         }
     }
+
+    function afficherTextArticle($stmt){
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        while($row = $stmt->fetch()) {
+            echo "<p class='card-text'>".substr($row['texte'],0,150)."</p>";
+        }
+    }
 ?>
