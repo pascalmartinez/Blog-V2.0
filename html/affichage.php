@@ -27,11 +27,4 @@
         </div>";
         }
     }
-
-   /* function afficherCardParCatergorie(){
-        if(isset($_POST['select']) && !empty($_POST['select'])){
-            $select = $_POST['select'];
-
-        }
-    }    */
 ?>
