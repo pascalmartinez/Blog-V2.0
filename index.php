@@ -38,14 +38,10 @@
             <div class="row" id="main">
             <?php pagination($connect); ?>
                 <?php
-<<<<<<< HEAD
-                   /* $stmt = articleCardList($connect);
-                    afficherCard($stmt);*/
 
-=======
                     $stmt = articleCardList($connect);
                     afficherCard($stmt);
->>>>>>> ddf59825169e6a3a04455bf9de527aa43dc8d157
+
                 ?>
             </div>
         </div>
@@ -68,7 +64,7 @@
                 </li>
             </ul>
         </nav>-->
-        
+
         <script src="js/selectCategorie.js"></script>
     </body>
 </html>
