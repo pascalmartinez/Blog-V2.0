@@ -8,6 +8,7 @@
         $email = $_POST["email"];
         $titremessage = $_POST["titremessage"];
         $message = $_POST["message"];
+        $categorie = $_POST["categorie"];
 
         if(isset($_POST['customFile'])){
             $fichier = $_POST["customFile"];
@@ -31,8 +32,8 @@
             $resultat = $connect->query($sql);  
             $row=$resultat->fetch();
  
-            $sql = "INSERT INTO article (id_auteur, titre, texte, url_img)
-            VALUES ('".$row['id_auteur']."', $titremessage','$message','$fichier')";
+            $sql = "INSERT INTO article (id_auteur, id_categorie, date, titre, texte, url_img)
+            VALUES ('".$row['id_auteur']."', '$categorie', NOW(), '$titremessage','$message','$fichier')";
             // use exec() because no results are returned
             $connect->exec($sql);            
             echo "Nouveau post enregistré";            
@@ -45,39 +46,5 @@
         $connect=connectBDD();
         formulaire($connect);
 
-
-
-    //exécution de la requête SQL:
-    //   $requete = mysqli_query($connect, $sql) or die( mysqli_error($connect) ) ;
-    //
-    // //affichage des résultats, pour savoir si l'insertion a marchée:
-    //   if($requete)
-    //   {
-    //     echo("L'insertion a été correctement effectuée") ;
-    //   }
-    //   else
-    //   {
-    //     echo("L'insertion à échouée") ;
-    //   }
-
-
-    //Rajout de la fonctionnalité permettant de choisir le groupe d'appartenance
-    // $req="SELECT Groupe.nom, Groupe.id FROM Groupe";
-    //
-    // $res=mysqli_query($link, $req) or die("erreur dans la requête $req".mysqli_error($link));
-    // while ($tab=mysqli_fetch_object($res))
-    //     $nomGrp[]=$tab->nom;
-    //     $idGrp[]=$tab->id;
-    //
-    // echo "<center><select name='idgroupe' class=form-field multiple size=3>";
-    //
-    // for ($i=0;$i<count($nomGrp);$i++)
-    // 	echo "<option value='$idGrp[$i]'>$nomGrp[$i]</option>";
-    //
-    // echo "</select></center>";
-
-
-    
-
-
+        header("Location: ../index.php");
 ?>
