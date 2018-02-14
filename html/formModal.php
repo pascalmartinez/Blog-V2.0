@@ -30,8 +30,8 @@
 
                                    </div>
                                    <div class="form-group form-title">
-                                       <label for="exampleFormControlSelect1 form-title">Selection de groupe</label>
-                                       <select class="form-control form-field" id="exampleFormControlSelect1">
+                                       <label for="selectcategorie form-title">Selection de groupe</label>
+                                       <select id="selectcategorie" class="form-control form-field" id="exampleFormControlSelect1">
                                            <option>1</option>
                                            <option>2</option>
                                            <option>3</option>
@@ -46,7 +46,7 @@
                             </div>
                                <div class="submit-container modal-footer">
                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                   <input class="submit-button" type="submit" value="Submit" />
+                                   <input class="submit-button" type="submit" value="Submit" action="post" />
                                </div>
                                </form>
                            </div>
