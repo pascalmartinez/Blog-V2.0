@@ -2,11 +2,13 @@
 <html>
     <head>
         <title>Accueil</title>
-        <?php include 'includes/header.html'?>
-        <?php include 'includes/base_js.html'?>
-        <?php include 'database/connectDB.php'?>
-        <?php include 'database/selectDB.php'?>
-        <?php include 'html/affichage.php'?>
+        <?php include 'includes/header.html';
+            include 'includes/base_js.html';
+            include 'database/connectDB.php';
+            include 'database/selectDB.php';
+            include 'html/affichage.php';
+            include 'database/pagination.php';
+         ?>
     </head>
     <body style="background-image: url(sources/images/back2.jpeg)">
         <?php $connect = connectBDD(); ?>
@@ -34,12 +36,39 @@
         </div>
         <div class="container section" method="post">
             <div class="row" id="main">
+            <?php pagination($connect); ?>
                 <?php
+<<<<<<< HEAD
+                   /* $stmt = articleCardList($connect);
+                    afficherCard($stmt);*/
+
+=======
                     $stmt = articleCardList($connect);
                     afficherCard($stmt);
+>>>>>>> ddf59825169e6a3a04455bf9de527aa43dc8d157
                 ?>
             </div>
         </div>
+        <!--<nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>-->
+        
         <script src="js/selectCategorie.js"></script>
     </body>
 </html>
