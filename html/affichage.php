@@ -7,7 +7,6 @@
     }
 
     function afficherCard($stmt){
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
         while($row = $stmt->fetch()) {
             echo  "<div class='card bg-light mb-3''>
             <div class='card-header'>
@@ -16,7 +15,7 @@
             </div>";
 
             if($row['url_img'] != ""){
-                echo "<img class='card-img-top' src='sources/images/".$row['url_img']."' alt='img article'>";
+                echo "<img id='my_image' class='card-img-top' src='sources/images/".$row['url_img']."' alt='img article'>";
             }
 
             echo "<div class='card-body'>
