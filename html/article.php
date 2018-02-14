@@ -16,10 +16,19 @@
                     $stmt = article($connect, $id);
                     afficherCard($stmt);
 
+<<<<<<< HEAD
                 ?>
                 </div>
             <?php include '../includes/base_js.html' ?>
             <script type="text/javascript" src="../js/articleImg.js"></script>
 
+=======
+
+
+                ?>
+                </div>
+            <?php include '../includes/base_js.html' ?>
+            <script type="text/javascript" src="../js/jqueryArticle.js"></script>
+>>>>>>> 4047028b91540a8fe8cac67aa6a3c341198298f9
         </body>
     </html>

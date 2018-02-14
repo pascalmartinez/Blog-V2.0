@@ -27,10 +27,19 @@
         }
     }
 
+<<<<<<< HEAD
    /* function afficherCardParCatergorie(){
         if(isset($_POST['select']) && !empty($_POST['select'])){
             $select = $_POST['select'];
 
         }
     }    */
+=======
+    function afficherTextArticle($stmt){
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        while($row = $stmt->fetch()) {
+            echo "<p class='card-text'>".substr($row['texte'],0,150)."</p>";
+        }
+    }
+>>>>>>> 4047028b91540a8fe8cac67aa6a3c341198298f9
 ?>
