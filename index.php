@@ -39,5 +39,6 @@
                 ?>
             </div>
         </div>
+        <script src="js/selectCategorie.js"></script>
     </body>
 </html>
