@@ -60,9 +60,12 @@
                     afficherCard($stmt);
                 ?>
             </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <?php $offset = pagination($connect); ?>
+                </ul>
+            </nav>
         </div>
-        
-
         <script src="js/selectCategorie.js"></script>
     </body>
 </html>
