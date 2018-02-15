@@ -20,7 +20,7 @@
             $end = min(($offset + $limit), $totalArticle);
 
 
-            $listdebut = '<li class="page-item">';
+            /*$listdebut = '<li class="page-item">';
             $listSuite = ($page > 1) ?
                        ' <a class="page-link" href="?page='.($page - 1).'" title="Previous page" aria-label="Previous">' :
                             '<span aria-hidden="true">&laquo;</span>
@@ -35,9 +35,9 @@
                         </a>
                     </li>';
 
-                    echo $listdebut.$listSuite.$listFin;
+                    echo $listdebut.$listSuite.$listFin;*/
 
-           /* $previousLink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a>
+           $previousLink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a>
             <a href="?page=' . ($page - 1) . '" title="Previous page">&lsaquo;</a>' : 
             '<span class="disabled">&laquo;</span>
             <span class="disabled">&lsaquo;</span>';
@@ -48,7 +48,7 @@
             <span class="disabled">&raquo;</span>';
 
             echo '<div id="paging"><p>', $previousLink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $totalArticle, ' results ', $nextLink, ' </p></div>';
-*/
+
             return $offset;
         }
         catch (Exception $e) {
