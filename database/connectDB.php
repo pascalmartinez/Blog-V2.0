@@ -2,8 +2,8 @@
     function connectBDD(){
         $servername = "localhost";
         $username = "username";
-        $password = "pw";
-        $dbname = "myBlog";
+        $password = "root";
+        $dbname = "yolo";
 
         try {
             $connect = new PDO("mysql:host=$servername;dbname=$dbname; charset=utf8", $username, $password);

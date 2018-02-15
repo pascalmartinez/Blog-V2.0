@@ -78,26 +78,7 @@
         }
     }
 
-    function formulaire($connect){
-
-    //récupération des valeurs des champs:
-        $nom = $_POST["nom"];
-        $email = strtolower($_POST["email"]);
-        $titremessage = $_POST["titremessage"];
-        $message = $_POST["message"];
-        $categorie = $_POST["categorie"];
-
-        if(isset($_FILES['fichier']['name'])){
-            $fichier = $_FILES['fichier']['name'];
-        }
-        else{
-            $fichier = "";
-        }
-
-        if (isset($_POST["nom"])) {
-            echo 'Cette variable existe, donc je peux l\'afficher.';
-        }
-
+    function formulaire($connect, $nom, $email, $categorie, $titremessage, $message, $fichier){  
         try{
             $sql = "INSERT INTO auteur (nom_auteur, mail)
                 VALUES ('$nom', '$email')";
@@ -118,34 +99,43 @@
         catch(PDOException $e){
             echo "Request failed : " . $e->getMessage();
             }
-    }
+    }    
 
-    function fichier(){
-        //Gère la partie upload image
-        
-            $target_dir = "../sources/images/";
-            $target_file = $target_dir .basename ($_FILES["fichier"]["name"]);
+    function pagination($connect){
+        try{
+            $totalArticle = $connect->query("SELECT COUNT(id_article) FROM article")->fetchColumn();
+            $limit = 10;
+            $pages = ceil($totalArticle / $limit);
 
-        try {
+            $page = min($pages, filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT, array(
+                'options' => array(
+                    'default'   => 1,
+                    'min_range' => 1,
+                ),
+            )));
 
-            if (file_exists($target_file)) {
-                $err= "Ce nom de fichier est déjà dans la base.";
-                return $err;
-            }
+            $offset = ($page - 1) * $limit;
 
-            if(move_uploaded_file($_FILES['fichier']['tmp_name'], $target_file)) {
-                echo "L'image ".  basename( $_FILES['fichier']['name']).
-                "a bien été chargé!";
-            } else{
-                echo "Le fichier n'a pas était chargé! Merci de réessayer";
-            }
+            $start = $offset + 1;
+            $end = min(($offset + $limit), $totalArticle);
 
-            header("Location: ../index.php");
+            //Permet de changer de page en y incluant leur titre et n°
+           $previousLink = ($page > 1) ? '<a href="?page=1" title="First page">&laquo;</a>
+            <a href="?page=' . ($page - 1) . '" title="Previous page">&lsaquo;</a>' :
+            '<span class="disabled">&laquo;</span>
+            <span class="disabled">&lsaquo;</span>';
 
-        } catch (\Exception $e) {
-                echo "Request failed : " . $e->getMessage();
+            $nextLink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page">&rsaquo;</a>
+            <a href="?page=' . $pages . '" title="Last page">&raquo;</a>' :
+            '<span class="disabled">&rsaquo;</span>
+            <span class="disabled">&raquo;</span>';
 
+            echo '<div id="paging"><p>', $previousLink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $totalArticle, ' results ', $nextLink, ' </p></div>';
+
+            return $offset;
+        }
+        catch (Exception $e) {
+            echo "Request failed : " . $e->getMessage();
         }
     }
-
 ?>

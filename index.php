@@ -7,7 +7,6 @@
             include 'database/connectDB1.php';
             include 'database/selectDB.php';
             include 'html/affichage.php';
-            include 'database/pagination.php';
          ?>
     </head>
     <body style="background-image: url(sources/images/back2.jpeg)">
