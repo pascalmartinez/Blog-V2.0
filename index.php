@@ -4,7 +4,7 @@
         <title>Accueil</title>
         <?php include 'includes/header.html';
             include 'includes/base_js.html';
-            include 'database/connectDB.php';
+            include 'database/connectDB1.php';
             include 'database/selectDB.php';
             include 'html/affichage.php';
             include 'database/pagination.php';

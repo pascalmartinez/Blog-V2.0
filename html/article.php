@@ -2,7 +2,7 @@
     <html>
         <head>
             <?php include '../includes/header.html' ?>
-            <?php include '../database/connectDB.php'?>
+            <?php include '../database/connectDB1.php'?>
             <?php include '../database/selectDB.php'?>
             <?php include 'affichage.php'?>
             <title>

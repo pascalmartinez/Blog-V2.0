@@ -12,7 +12,7 @@
                    <div class="modal-body">
                        <div class="modal-body">
                            <div class="form-group">
-                               <form class="container formulaire" action="database/traitform.php" enctype="multipart/form-data" method="post">
+                               <form class="container formulaire" action="html/traitForm.php" enctype="multipart/form-data" method="post">
                                    <div class="form-group form-title">
                                        <label for="exampleFormControlInput1 form-title">Votre nom</label>
                                        <input name="nom" type="text" class="form-control form-field" placeholder="Indiquer votre nom ici">
