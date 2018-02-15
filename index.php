@@ -7,9 +7,10 @@
             include 'database/connectDB1.php';
             include 'database/selectDB.php';
             include 'html/affichage.php';
+            include 'html/pagination.php';
          ?>
     </head>
-    <body style="background-image: url(sources/images/back2.jpeg)">
+    <body style="background-image: url(sources/images/back2.jpeg); background-size: cover">
         <?php $connect = connectBDD(); ?>
         <div class="bandeauInteraction container-fluid">
             <div class="row">
@@ -36,7 +37,8 @@
         <div class="container section" method="post">
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <?php $offset = pagination($connect); ?>
+                    <?php $totalArticle = nbArticle($connect);
+                    $offset = pagination($totalArticle); ?>
                 </ul>
             </nav>
             <div class="row" id="main">
@@ -47,7 +49,9 @@
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <?php $offset = pagination($connect); ?>
+                    <?php
+                    $totalArticle = nbArticle($connect);
+                    $offset = pagination($totalArticle); ?>
                 </ul>
             </nav>
         </div>
