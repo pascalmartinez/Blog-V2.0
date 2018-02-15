@@ -1,8 +1,8 @@
 <?php
     function connectBDD(){
         $servername = "localhost";
-        $username = "root";
-        $password = "yolo";
+        $username = "username";
+        $password = "pw";
         $dbname = "myBlog";
 
         try {
