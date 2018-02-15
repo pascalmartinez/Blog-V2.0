@@ -1,5 +1,5 @@
 <?php
-    include '../database/connectDB1.php';
+    include '../database/connectDB.php';
     include '../database/selectDB.php';
     include 'affichage.php';
 
@@ -10,5 +10,4 @@
         $stmt = selectCard($connect, $idCategorie);
         afficherCard($stmt);
     }
-
 ?>
