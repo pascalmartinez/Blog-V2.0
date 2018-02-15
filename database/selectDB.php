@@ -1,12 +1,20 @@
 <?php
-    function articleCardList($connect){
+    function articleCardList($connect, $offset){
         try{
+            $limit = 10;
 
             $stmt = $connect->prepare("SELECT article.id_article, article.date, article.titre, article.texte, article.url_img, auteur.nom_auteur, categorie.nom_categorie
             FROM article
             INNER JOIN auteur ON article.id_auteur=auteur.id_auteur
             INNER JOIN categorie ON article.id_categorie=categorie.id_categorie
-            ORDER BY date DESC LIMIT 10 ");//offset 10
+            ORDER BY date DESC 
+            LIMIT 
+                :limit 
+            OFFSET
+                :offset");
+
+            $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
+            $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
 
             $stmt->execute();
 
