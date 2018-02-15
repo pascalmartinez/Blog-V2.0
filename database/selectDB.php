@@ -19,7 +19,6 @@
             $stmt->execute();
 
             return $stmt;
-
         }
         catch(PDOExeption $e){
             echo "Request failed : " . $e->getMessage();
@@ -36,9 +35,9 @@
             $stmt->execute();
             return $stmt;
         }
-            catch(PDOExeption $e){
-                echo "Request failed : " . $e->getMessage();
-            }
+        catch(PDOExeption $e){
+            echo "Request failed : " . $e->getMessage();
+        }
     }
 
     function selectCategorie($connect){
@@ -95,10 +94,10 @@
             // use exec() because no results are returned
             $connect->exec($sql);
             echo "Nouveau post enregistré";
-            }
+        }
         catch(PDOException $e){
             echo "Request failed : " . $e->getMessage();
-            }
+        }
     }
 
     function nbArticle($connect){
@@ -106,7 +105,7 @@
             $totalArticle = $connect->query("SELECT COUNT(id_article) FROM article")->fetchColumn();
             return $totalArticle;
         }
-        catch (Exception $e) {
+        catch (Exception $e){
             echo "Request failed : " . $e->getMessage();
         }
     }

@@ -2,7 +2,7 @@
     <html>
         <head>
             <?php include '../includes/header.html' ?>
-            <?php include '../database/connectDB1.php'?>
+            <?php include '../database/connectDB.php'?>
             <?php include '../database/selectDB.php'?>
             <?php include 'affichage.php'?>
             <title>
@@ -23,13 +23,11 @@
 
                     $stmt = article($connect, $id);
                     afficherCard($stmt);
-
                 ?>
-
-                </div>
-                <div class="container">
-                    <a href="../index.php"><button type="button" name="button" class="btn btn-primary">Retour</button></a>
-                </div>
+            </div>
+            <div class="container">
+                <a href="../index.php"><button type="button" name="button" class="btn btn-primary">Retour</button></a>
+            </div>
             <?php include '../includes/base_js.html' ?>
             <script type="text/javascript" src="../js/jqueryArticle.js"></script>
         </body>

@@ -4,7 +4,7 @@
         <title>Accueil</title>
         <?php include 'includes/header.html';
             include 'includes/base_js.html';
-            include 'database/connectDB1.php';
+            include 'database/connectDB.php';
             include 'database/selectDB.php';
             include 'html/affichage.php';
             include 'html/pagination.php';
@@ -21,7 +21,6 @@
                     <div class="input-group d-md-flex mb-3 mt-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputCategorie">Catégorie</label>
-
                         </div>
                         <select class="custom-select col-7 col-md-6" id="inputCategorie">
                             <?php

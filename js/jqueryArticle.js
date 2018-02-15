@@ -9,5 +9,4 @@ $(document).ready(function(){
     id = id.substr(8);
     $("p.card-text:first-child").load("../html/textArticle.php", "id="+id);
     //change le text de la page article.php
-
 });
