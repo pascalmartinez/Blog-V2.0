@@ -39,8 +39,8 @@
             <?php pagination($connect); ?>
                 <?php
 
-                    $stmt = articleCardList($connect);
-                    afficherCard($stmt);
+                    // $stmt = articleCardList($connect);
+                    // afficherCard($stmt);
 
                 ?>
             </div>
