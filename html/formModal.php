@@ -20,7 +20,8 @@
                                        <input name="email" type="email" class="form-control form-field" id="exampleFormControlInput1" placeholder="votreptitnom@example.com">
                                    </div>
                                    <div class="custom-file form-title">
-                                       <input name="fichier" type="file" class="custom-file-input form-title" id="customFile">
+                                       <input  value="Upload Image"  name="fichier" type="file" class="custom-file-input form-title" id="customFile">
+
                                        <label class="custom-file-label form-field" for="customFile">Inclure une image</label>
                                    </div>
                                    <div class="title form-title">
