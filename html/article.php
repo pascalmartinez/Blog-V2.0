@@ -15,7 +15,7 @@
                  ?>
             </title>
         </head>
-        <body>
+        <body style="background-image: url(../sources/images/back2.jpeg)">
             <div class="container">
                 <?php
                     $connect = connectBDD();
@@ -25,7 +25,7 @@
                     afficherCard($stmt);
 
                 ?>
-                
+
                 </div>
                 <div class="container">
                     <a href="../index.php"><button type="button" name="button" class="btn btn-primary">Retour</button></a>

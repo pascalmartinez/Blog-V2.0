@@ -50,6 +50,13 @@
             $target_file = $target_dir .basename ($_FILES["fichier"]["name"]);
 
             // move_uploaded_file(($_FILES["img"]["tmp_name"],$target_dir,$target_file);
+        try {
+
+            if (file_exists($target_file)) {
+                $err= "Ce nom de fichier est déjà dans la base.";
+                return $err;
+
+            }
 
             if(move_uploaded_file($_FILES['fichier']['tmp_name'], $target_file)) {
                 echo "L'image ".  basename( $_FILES['fichier']['name']).
@@ -59,7 +66,12 @@
             }
 
 
+            header("Location: ../index.php");
 
+        } catch (\Exception $e) {
+                echo "Request failed : " . $e->getMessage();
+
+        }
 
             // $uploadOk = 1;
             // $imageFileType = strtolower (pathinfo($target_file,PATHINFO_EXTENSION));
@@ -75,12 +87,7 @@
             //         $uploadOk = 0;
             //     }
             // }
-            //
-            // // Check si le fichier existe déjà
-            // if (file_exists($target_file)) {
-            //     echo "Ce nom de fichier est déjà dans la base.";
-            // $uploadOk = 0;
-            // }
+
             // // Check la taille
             // if ($_FILES["fichier"]["size"] > 500000) {
             //     echo "Sorry, c'est pas la taille qui compte mais quand meme, merci de mettre un fichier plus petit.";
@@ -100,5 +107,5 @@
         formulaire($connect);
         fichier();
 
-        header("Location: ../index.php");
+
 ?>
